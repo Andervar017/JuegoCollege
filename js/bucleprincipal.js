@@ -1,5 +1,6 @@
 //Namespace
 //Mainloop - bucle principal
+//6O frames es lo adecuado
 var buclePrincipal = {
 	idEjecucion: null,
 	ultimoRegistro: 0,
