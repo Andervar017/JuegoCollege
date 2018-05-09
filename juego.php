@@ -11,6 +11,7 @@
 		</div>
 		<script src="js/teclado.js"></script>
 		<script src="js/rectangulo.js"></script>
+		<script src="js/mando.js"></script>
 		<script src="js/bucleprincipal.js"></script>
 		<script src="js/dimensiones.js"></script>
 		<script src="js/inicio.js"></script>
