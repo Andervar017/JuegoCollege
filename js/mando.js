@@ -4,8 +4,8 @@ var mando = {
 	conectado: false,
 	iniciar: function() {
 		if (mando.eventosDisponibles) {
-			window.addEventListener("gamepadconnected", mando.conectar);
-			window.addEventListener("gamepaddisconnected", mando.desconectar);
+			window.addEventListener("Control  conectado", mando.conectar);
+			window.addEventListener("Control desconectado", mando.desconectar);
 		} else {
 			mando.actualizar();
 		}
@@ -37,12 +37,18 @@ var mando = {
 			return;
 		}
 
-		//continuará
+		if (mando.botonPulsado(mando.objeto.buttons[0])) {
+			console.log("Mando: A");
+			}
 	},
 	botonPulsado: function(boton) {
-
+		if (typeof(boton) == "object") {
+			return boton.pressed;
+		}
+		return boton == 1.0;
 	},
 	identificar: function() {
-
+		console.log("Mando conectado en el índice %d: %s. %d botones, %d ejes.",
+			mando.objeto.index, mando.objeto.id, mando.objeto.buttons.length, mando.objeto.axes.length);
 	}
-}
+};
