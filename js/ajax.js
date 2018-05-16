@@ -1,10 +1,9 @@
 var ajax = {
-	cargarArchivo: function(ruta) {
+	cargarArchivo: function(ruta, manipularDatos) {
 		var peticion = new XMLHttpRequest();
 
 		peticion.onreadystatechange = function() {
 			/*
-			Estados de la peticion
 			0 / UNSENT - no iniciada
 			1 / OPENED - conectado al servidor
 			2 / HEADERS_RECIEVED - peticion recbida
@@ -13,10 +12,9 @@ var ajax = {
 			*/
 			if (peticion.readyState == XMLHttpRequest.DONE) {
 				if (peticion.status == 200) {
-					console.log(JSON.parse(peticion.responseText));
-					//Convertir el archivo de texxto en json
+					manipularDatos(JSON.parse(peticion.responseText));
 				} else if (peticion.status == 400) {
-					console.log("Error");
+					console.log("error");
 				} else {
 					console.log("resultado inesperado");
 				}
