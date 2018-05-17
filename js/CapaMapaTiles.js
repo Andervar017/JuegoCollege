@@ -24,7 +24,7 @@ CapaMapaTiles.prototype.encontrarSpriteEnPaletaPorId = function(idSpriteSobreZer
 	for (s = 0; s < paletasSprites.length; s++) {
 		if (idSpriteSobreZero >= paletasSprites[s].primerSpriteSobreUno - 1 &&
 			idSpriteSobreZero < paletasSprites[s].totalSprites + paletasSprites[s].primerSpriteSobreUno + 1) {
-			return paletasSprites[s].sprites[Math.abs(paletasSprites[s].primerSpriteSobreUno - 1 - idSpriteSobreZero)];
+			return paletasSprites[s].sprites[Math.abs(paletasSprites[s].primerSpriteSobreUno - idSpriteSobreZero)];
 		}
 	}
 	throw "El ID sobre ZERO " + idSpriteSobreZero + " del sprite no existe en ninguna paleta";

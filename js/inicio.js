@@ -1,5 +1,6 @@
 var inicio = {
 	iniciadores: [
+		dimensiones.iniciar(),
 		maquinaEstados.iniciar(),
 		teclado.iniciar(),
 		mando.iniciar(),
@@ -14,6 +15,7 @@ var inicio = {
 		}
 	}
 };
+
 document.addEventListener('DOMContentLoaded', function() {
 	inicio.iniciarJuego();
 }, false);

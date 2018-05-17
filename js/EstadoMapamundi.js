@@ -2,10 +2,12 @@ function EstadoMapamundi(idEstado) {
 	var that = this;
 	this.mapaListo = false;
 	this.mapa = null;
-	ajax.cargarArchivo("mapas/mapa3.json", function(objetoJSON) {
+	this.jugadorMapamundi = null;
+	ajax.cargarArchivo("mapas/mapa3.tmx", function(objetoJSON) {
 		that.mapa = new Mapa(objetoJSON);
 		that.mapaListo = true;
-		console.log("Mapa cargado por AJAX");
+		that.jugadorMapamundi = new JugadorMapamundi(new Punto(0,0));
+		console.log("mapa cargado por AJAX");
 	});
 }
 
